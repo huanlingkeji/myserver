@@ -115,7 +115,7 @@ func (c *Connection) WriteLoop(sess *Session) {
 	for {
 		select {
 		case data := <-sess.Out:
-			util.ShowBytes(data)
+			//util.ShowBytes(data)
 			n, err := c.Conn.Write(util.FinalPkg(data))
 			_ = n
 			util.HandleErr(err, "发送数据错误")
